@@ -1,0 +1,31 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install openpyxl
+        run: pip install openpyxl
+
+      - name: Generated files are up to date
+        run: python tools/build.py --check
+
+      - name: Example rewrite is clean
+        run: python tools/style-check.py examples/after.md
+
+      - name: Example original is not clean
+        run: |
+          if python tools/style-check.py examples/before.md; then
+            echo "before.md reported clean, so the checker has stopped working"
+            exit 1
+          fi

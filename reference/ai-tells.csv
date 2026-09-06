@@ -1,0 +1,151 @@
+Category,Telltale Sign,Example,Human Alternative
+Punctuation,Em dashes used heavily or at all,The result — surprisingly — was clear,"Use commas, parentheses, or restructure the sentence"
+Punctuation,Semicolons overused in casual writing,"It worked; however, it failed later",Split into two sentences
+Punctuation,Oxford comma applied with perfect consistency,"red, white, and blue every single time",Humans are inconsistent; vary it
+Structure,Essay always ends with a section titled Conclusion,Conclusion: In summary...,"End on a final point, a question, or just stop"
+Structure,Intro that restates the question before answering,Great question! Burnout is a complex topic that affects many people...,Answer directly in the first sentence
+Structure,Rule of three everywhere,"clear, concise, and compelling",Use two items or four; break the rhythm
+Structure,Every paragraph roughly the same length,Uniform 3-4 sentence paragraphs throughout,"Vary length, but keep most paragraphs at three to six sentences"
+Structure,Bullet points for everything,Lists used where prose would flow naturally,Write in prose; reserve bullets for true lists
+Structure,Headers and subheaders in short documents,H2 headers in a 400-word piece,Only use headers in genuinely long documents
+Structure,Numbered lists with bolded lead-ins,1. **Plan ahead:** You should...,Plain prose or simple unbolded lists
+Structure,Perfectly parallel sentence construction,First we X. Then we Y. Finally we Z.,Vary sentence openings and lengths
+Structure,Summary paragraph that recaps what was just said,"In summary, as we've seen above...",Cut it; readers just read it
+Phraseology,It's important to note that,It's important to note that taxes vary,Just state the fact
+Phraseology,It's worth mentioning / worth noting,It's worth noting that...,Delete the phrase entirely
+Phraseology,In today's fast-paced world / digital age / ever-evolving landscape,In today's rapidly evolving landscape...,Name the actual time or context or cut it
+Phraseology,Delve / delve into,Let's delve into the details,"dig into, look at, examine, get into"
+Phraseology,Navigate (metaphorical),navigate the complexities of...,"deal with, handle, work through"
+Phraseology,Landscape (metaphorical),the marketing landscape,"the market, the field, the industry"
+Phraseology,Tapestry,a rich tapestry of cultures,Cut it; almost no human writes this
+Phraseology,Unlock / unleash the potential,unlock the power of AI,Describe the actual benefit
+Phraseology,Harness,harness the power of data,use
+Phraseology,Leverage as a verb,leverage your network,use
+Phraseology,Robust,a robust solution,"strong, solid, reliable, or name the specific property"
+Phraseology,Seamless / seamlessly,integrates seamlessly,"smoothly, easily, or describe how"
+Phraseology,Elevate,elevate your brand,"improve, boost"
+Phraseology,Foster,foster collaboration,"encourage, build"
+Phraseology,Embark on a journey,embark on your fitness journey,"start, begin"
+Phraseology,Journey (metaphorical),your learning journey,"process, path, or just the noun itself"
+Phraseology,Dive deep / deep dive,let's dive deep into,"look closely at, examine"
+Phraseology,At the end of the day,"At the end of the day, it's about trust","ultimately, or cut it"
+Phraseology,When it comes to,When it comes to pricing...,For pricing... or restructure
+Phraseology,In the realm of,in the realm of cybersecurity,in cybersecurity
+Phraseology,A testament to,a testament to their dedication,"shows, proves"
+Phraseology,Plays a crucial/vital/pivotal role,exercise plays a crucial role in health,"matters for, affects, helps"
+Phraseology,Furthermore / Moreover / Additionally as paragraph openers,"Furthermore, studies show...","Also, plus, and, or no transition at all"
+Phraseology,However at the start of sentences repeatedly,However... However...,"but, though, still, yet"
+Phraseology,Ultimately as a closer,"Ultimately, the choice is yours",Vary closers or end on substance
+Phraseology,Whether you're a beginner or an expert,whether you're a seasoned pro or just starting out,Address one audience directly
+Phraseology,Look no further,look no further than X,Just recommend X
+Phraseology,Game-changer / revolutionary / cutting-edge,a game-changing solution,Describe what it actually does differently
+Phraseology,Comprehensive,a comprehensive guide,"complete, full, or cut it"
+Phraseology,Myriad,a myriad of options,"many, lots of"
+Phraseology,Plethora,a plethora of features,"plenty, many"
+Phraseology,Utilize,utilize the tool,use
+Phraseology,Facilitate,facilitate communication,"help, enable, make easier"
+Phraseology,Underscore / underscores the importance,this underscores the need for...,"shows, highlights"
+Phraseology,Notably / Significantly as sentence openers,"Notably, the results showed...",Cut or restructure
+Phraseology,In conclusion,"In conclusion, we have seen...","Just end, or use 'So' if needed"
+Phraseology,That being said / With that said,"That being said, there are exceptions","but, still, even so"
+Phraseology,It should be noted,It should be noted that results vary,State it plainly
+Phraseology,Not only X but also Y,not only fast but also reliable,fast and reliable
+Phraseology,Whilst (in American English),whilst working,while
+Phraseology,Various / a variety of,a variety of factors,"several, some, or name them"
+Phraseology,Ensure,ensure success,"make sure, or restructure"
+Phraseology,Key (overused adjective),"key takeaways, key factors, key insights","main, big, important, or cut"
+Phraseology,Crucial / vital / essential clustered together,It is crucial... vital... essential...,Use sparingly; vary intensity honestly
+Phraseology,Empower,empower your team,"let, help, give the ability to"
+Phraseology,Resonate,this resonates with audiences,"connects, lands, hits home"
+Phraseology,Spearhead,spearheaded the initiative,"led, started, ran"
+Phraseology,Realm / sphere / domain,in the digital sphere,"field, area, or name it"
+Phraseology,Beacon,a beacon of hope,Cut or replace with concrete imagery
+Phraseology,Vibrant,a vibrant community,"active, lively, or describe specifics"
+Phraseology,Bustling,a bustling city,"busy, crowded"
+Phraseology,Nestled,nestled in the mountains,"located, sits, tucked"
+Phraseology,Boasts,the hotel boasts a pool,"has, offers, includes"
+Tone,Relentless balanced hedging,"While X has benefits, it also has drawbacks. On one hand... on the other hand...",Take a position; commit to a view
+Tone,Excessive qualifiers,It could potentially possibly be argued that...,Say it plainly or cut the claim
+Tone,Refusal to give an opinion,Both options have merit and the choice depends on your needs,Recommend one and say why
+Tone,Uniform enthusiasm,"Everything is exciting, amazing, fantastic",Vary energy; most things are just fine
+Tone,Apologetic or sycophantic openers,Great question! I'd be happy to help!,Skip straight to the answer
+Tone,Overly safe disclaimers,Always consult a professional before...,Include only when genuinely warranted
+Tone,No contractions,"do not, cannot, it is","don't, can't, it's"
+Tone,Zero typos or informal slips in casual contexts,Perfect grammar in a text message,Occasional fragments and looseness are human
+Tone,Addressing the reader as a generic everyone,Many people find that...,Speak to one reader: you
+Vocabulary,Same idea restated with synonyms,"important, crucial, vital, essential in one paragraph",Say it once
+Vocabulary,Adjective stacking,"a powerful, innovative, user-friendly platform",One adjective or none; show instead
+Vocabulary,Latinate words over plain ones,"commence, terminate, sufficient","start, end, enough"
+Vocabulary,Abstract nouns over concrete ones,"solutions, insights, strategies, frameworks",Name the actual thing
+Formatting,Bold text scattered through prose,The **key insight** is that **timing matters**,Reserve bold for rare true emphasis
+Formatting,Emoji as bullet points or section markers,🚀 Launch ✅ Done 💡 Tip,Plain text unless the platform calls for it
+Formatting,Title Case On Every Header,How To Improve Your Writing Skills,Sentence case reads more natural
+Formatting,Tables used for simple comparisons,Two-column pros/cons table for trivial points,A sentence or two of prose
+Structure,FAQ section appended unprompted,Frequently Asked Questions at the end,Only include if requested
+Structure,Call to action at the end of everything,Ready to get started? Try it today!,End on substance
+Tone,Rhetorical questions as transitions,So what does this mean for you?,Make the statement directly
+Tone,Anthropomorphizing concepts,Data tells a story; the numbers speak,Plain description
+Phraseology,Moreover the implications are profound,"profound implications, far-reaching consequences",Specific stated consequences
+Phraseology,In an era of / In an age where,In an era of misinformation...,Drop the throat-clearing; start with the point
+Phraseology,Stands as / serves as,serves as a reminder,"is, reminds us"
+Phraseology,Paving the way,paving the way for innovation,"leading to, enabling"
+Phraseology,The intersection of,at the intersection of art and tech,"where art meets tech, or restructure"
+Phraseology,Holistic,a holistic approach,"complete, whole, all-around"
+Phraseology,Synergy,create synergy between teams,Cut; describe the actual cooperation
+Phraseology,Best practices,follow industry best practices,"proven methods, what works"
+Phraseology,Actionable insights,actionable insights from data,"useful findings, things you can act on"
+Punctuation,Curly quotes and apostrophes,It’s a “good” idea,Straight quotes and apostrophes only
+Punctuation,Ellipsis character instead of three periods,Wait for it…,"Three periods, or cut the trailing off"
+Punctuation,Arrows and glyphs used as connectors,"Input → Output, • bullet glyphs","Words, or a plain hyphen as the list marker"
+Punctuation,Non-breaking spaces and other invisible characters,Paste artifacts left in the text,Only characters you can type on a keyboard
+Punctuation,Em dash swapped for a comma splice,"The result, surprisingly, was clear, nobody noticed",Rewrite the sentence instead of patching it
+Punctuation,Colon used to set up a punchline,The problem: nobody read it,Write it as one sentence
+Punctuation,Stacked parenthetical standing in for an em dash,The plan (which nobody liked) (and nobody read) failed,"One clause, or split the sentence"
+Sentence Pattern,Negation reframe,"It's not a tool, it's a philosophy","State what it is, once"
+Sentence Pattern,"X isn't just Y, it's Z","This isn't just software, it's a movement",Say what it does
+Sentence Pattern,X is more than just Y,This is more than just a phone,Describe the thing itself
+Sentence Pattern,"The question isn't X, the question is Y","The question isn't whether, it's when",Ask the real question once
+Sentence Pattern,"Not because X, but because Y","It failed not because of cost, but because of timing",Give the reason plainly
+Sentence Pattern,Dramatic countdown fragments,Not a bug. Not a feature. Something worse.,One complete sentence
+Sentence Pattern,Self-posed question answered immediately,The result? Disaster.,State the result
+Sentence Pattern,Anaphora across consecutive sentences,We build. We ship. We learn.,Vary the sentence openings
+Sentence Pattern,Two tricolons stacked in a row,"fast, cheap, and simple; clear, bold, and true",Break the rhythm; use two items or four
+Sentence Pattern,False range with no real middle,from strategy to execution,Name both things without the range
+Sentence Pattern,Tailing participle adding fake significance,"The mill closed in 2019, underscoring its role in the decline",End the sentence at the fact
+Sentence Pattern,Despite its challenges formula,"Despite its challenges, the program remains popular",Give the problem real weight or cut it
+Sentence Pattern,Invented concept label used as established,This is the supervision paradox,"Say it plainly, or flag it as your own coinage"
+Sentence Pattern,Sentence that exists only to set up the next one,And that changes everything.,Cut it
+Phraseology,Here's the thing / Here's the kicker,Here's where it gets interesting,Just say the thing
+Phraseology,What most people miss / nobody talks about this,The part everyone overlooks is...,Drop the exclusivity claim
+Phraseology,Let's break this down / let's unpack,Let's unpack what that means,Explain it directly
+Phraseology,Think of it as / it's like a,Think of it as a filing cabinet for your brain,Describe the actual mechanism
+Phraseology,Imagine a world where / picture this,Picture this: it's 2030,Start with the fact
+Phraseology,The truth is / the reality is / make no mistake,"Make no mistake, this is serious",State the claim and support it
+Phraseology,It bears mentioning,It bears mentioning that costs vary,State it
+Phraseology,To sum up,"To sum up, the three points were...",Stop at the last point
+Phraseology,Ecosystem outside biology,the developer ecosystem,"the tools, the market, the community"
+Phraseology,Paradigm / paradigm shift,a paradigm shift in computing,Say what actually changed
+Phraseology,Streamline,streamline the process,"speed up, simplify, cut steps"
+Phraseology,Transformative,a transformative experience,Describe the change
+Phraseology,Dead idioms,"the smoking gun, a perfect storm, move the needle",Say what actually happened
+Phraseology,Powerful / meaningful / profound as filler weight,a powerful reminder,"Cut it, or name the effect"
+Phraseology,Fundamental / pivotal / significant as filler weight,a significant milestone,"Cut it, or say why it mattered"
+Phraseology,Depth-signaling adverbs,"quietly became, deeply rooted, remarkably simple",Cut the adverb
+Phraseology,Represents / marks / embodies / functions as in place of is,This represents a shift,is
+Tone,Compliment sandwich around criticism,Great work overall! One small thing... Keep it up!,Lead with what is wrong
+Tone,Performed vulnerability,"And yes, I'll admit it, I was wrong",Say what happened without staging it
+Tone,Performed casualness,"and go ""nope""","Write plainly, or be genuinely casual"
+Tone,Inflated stakes on an ordinary subject,This changes everything about spreadsheets,Match the register to the subject
+Tone,Symmetrical objection handling,Some will say X. But consider Y.,Address the real objection or skip it
+Evidence,Unnamed authorities,"experts say, studies show, research suggests",Name the source or drop the claim
+Evidence,Invented statistics,73% of teams report faster delivery,Use a real number or write the sentence without one
+Evidence,Fabricated quote or company example,As one CTO put it...,Quote only what was actually said
+Evidence,Famous-company example stacking,Apple didn't build Uber. Stripe didn't build Shopify.,"One real, relevant example"
+Evidence,Hedging inside the draft instead of flagging it,This may possibly indicate...,Commit in the draft; flag uncertainty outside it
+Structure,One-line paragraphs stacked for emphasis,"Three fragments, each its own paragraph",Most paragraphs run three to six sentences
+Structure,List disguised as prose,The first... The second... The third...,"If it is a list, make it a list"
+Structure,Phase 1 / Phase 2 narration in prose,Phase 1 was discovery. Phase 2 was build.,Make it a list or write it as a story
+Structure,Same argument restated in five framings,One point reworded across five paragraphs,Say it once and stop
+Structure,One metaphor carried through the whole piece,The garden metaphor extended for 800 words,Use it once and move on
+Structure,Commentary interleaved with a requested draft,Here's your email! [draft] Let me know if...,Deliverable alone in its own block or file
+Structure,Draft opening addressed to the requester,"Hi David, here's the revised intro:",Open the draft as the recipient will read it
