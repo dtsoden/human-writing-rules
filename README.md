@@ -1,3 +1,5 @@
+![Human Writing Rules](Logo.png)
+
 # Human writing rules
 
 A prompt that stops language models from writing like language models, a catalog of the habits it targets, and a script that checks a finished draft for the ones a machine can catch.
