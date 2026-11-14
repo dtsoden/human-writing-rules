@@ -28,9 +28,9 @@ Python 3, standard library only, nothing to install.
 
 `writing-rules-short.md` is a 1,497 character version for boxes that cap out. ChatGPT's custom instructions allow 1,500 characters on free and Go plans and 5,000 on paid plans, so the short version fits everywhere.
 
-`reference/ai-tells.csv` is the catalog: 150 rows across eight categories, with the tell, an example of it, and what a person would write instead. It exists so the rules aren't arbitrary. When the prompt bans a word, this file shows a sentence carrying it and what to write instead. `reference/ai-tells.xlsx` is the same rows with a frozen header and a filter, for people who edit with a spreadsheet open beside the draft.
+`reference/ai-tells.csv` is the catalog: 151 rows across eight categories, with the tell, an example of it, and what a person would write instead. It exists so the rules aren't arbitrary. When the prompt bans a word, this file shows a sentence carrying it and what to write instead. `reference/ai-tells.xlsx` is the same rows with a frozen header and a filter, for people who edit with a spreadsheet open beside the draft.
 
-`tools/style-check.py` reports line numbers for em dashes and other characters you cannot type, the banned word and phrase lists, filler weight, depth adverbs, "is" substitutes, six negation reframe patterns, self-answered questions, three-in-a-row anaphora, rule-of-three rhythm, tailing participles, unnamed sources, stacked one-line paragraphs, Title Case headers, and sections named Conclusion. It exits 1 on findings and 0 when clean, so it works as a pre-commit hook or a build step. It reads Markdown and HTML as well as plain text.
+`tools/style-check.py` reports line numbers for em dashes and other characters you cannot type, the banned word and phrase lists, filler weight, depth adverbs, "is" substitutes, six negation reframe patterns, self-answered questions, three-in-a-row anaphora, rule-of-three rhythm, tailing participles, unnamed sources, stacked one-line paragraphs, the banned opinion label, Title Case headers, and sections named Conclusion. It exits 1 on findings and 0 when clean, so it works as a pre-commit hook or a build step. It reads Markdown and HTML as well as plain text.
 
 What it cannot judge is whether you took a position, whether the enthusiasm matches the subject, or whether an example is real. Those stay yours.
 

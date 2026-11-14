@@ -4,7 +4,8 @@ Style checker for the human-natural writing rules.
 Scans HTML/MD/text for em dashes and other non-keyboard characters, banned
 words and phrases, filler weight, negation reframes, self-answered questions,
 anaphora, rule-of-three patterns, tailing participles, unnamed sources,
-stacked one-line paragraphs, and Title Case headers.
+stacked one-line paragraphs, "My view" opinion labels, and Title Case
+headers.
 
 Usage: python style-check.py <file> [file...]
 """
@@ -81,6 +82,12 @@ UNNAMED_SOURCES = [
     "experts say", "experts agree", "studies show", "studies suggest",
     "research suggests", "research shows", "industry reports indicate",
     "observers note", "critics argue", "it is widely believed",
+]
+
+# Opinion labels that read as machine-written. Word-bounded, so "my viewpoint"
+# and "review" don't match.
+OPINION_LABELS = [
+    (r"\bmy view\b", 'OPINION LABEL: "my view" (use My advice, IME, IMO, My opinion or My technique, and vary it)'),
 ]
 
 AI_TRANSITIONS = ["furthermore", "moreover", "additionally", "notably", "significantly", "ultimately"]
@@ -177,6 +184,9 @@ def check(path):
         for p in UNNAMED_SOURCES:
             if p in low:
                 findings.append(('UNNAMED SOURCE: ' + p, i, snip))
+        for pat, label in OPINION_LABELS:
+            if re.search(pat, low):
+                findings.append((label, i, snip))
         for pat in IS_SUBSTITUTES:
             if re.search(pat, low):
                 findings.append(('USE "IS" INSTEAD', i, snip))

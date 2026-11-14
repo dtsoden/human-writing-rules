@@ -137,6 +137,7 @@ Tone,Performed vulnerability,"And yes, I'll admit it, I was wrong",Say what happ
 Tone,Performed casualness,"and go ""nope""","Write plainly, or be genuinely casual"
 Tone,Inflated stakes on an ordinary subject,This changes everything about spreadsheets,Match the register to the subject
 Tone,Symmetrical objection handling,Some will say X. But consider Y.,Address the real objection or skip it
+Tone,"""My view"" as an opinion label","My view: go direct and skip the reseller.","Pick a label that fits and vary it: My advice, In my experience (IME), IMO, My opinion, My technique"
 Evidence,Unnamed authorities,"experts say, studies show, research suggests",Name the source or drop the claim
 Evidence,Invented statistics,73% of teams report faster delivery,Use a real number or write the sentence without one
 Evidence,Fabricated quote or company example,As one CTO put it...,Quote only what was actually said
