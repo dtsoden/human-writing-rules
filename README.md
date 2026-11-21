@@ -4,8 +4,6 @@
 
 Writing rules that stop language models from writing like language models, a skill that applies them in the writer's own voice and learns from their feedback, a catalog of the habits it targets, and a script that checks a finished draft for the ones a machine can catch.
 
-The product lives at humanwritingrules.com. This repo is private and is where it gets built.
-
 ## How it fits together
 
 There are three layers, and the most specific one wins.
@@ -27,9 +25,13 @@ python tools/build.py --install codex     Claude Code and Codex
 
 This copies the skill into the tool's skills folder and writes the always-on rules into its global instructions file between marker lines. Nothing outside the markers changes, a dated copy of the instructions file is kept first, and the personal layer is never touched. Run it again after any rebuild.
 
-Claude plugin: the repo root is a Claude plugin and marketplace (`.claude-plugin/`), with the skill in `skills/human-writing-rules/`.
+Claude plugin: the repo root is a Claude plugin and marketplace (`.claude-plugin/`), with the skill in `skills/human-writing-rules/`. In Claude Code:
 
-claude.ai and ChatGPT: upload `dist/human-writing-rules.zip` as a skill. Where a tool can't save files, the skill offers an updated profile at the end of a session for the writer to attach next time.
+```
+/plugin install human-writing-rules --marketplace dtsoden/human-writing-rules
+```
+
+claude.ai and ChatGPT: run `python tools/build.py` to make `dist/human-writing-rules.zip`, then upload it as a skill. Where a tool can't save files, the skill offers an updated profile at the end of a session for the writer to attach next time.
 
 Everything else: `install/README.md` lists paste-in files for tools without skills.
 
@@ -70,6 +72,6 @@ The check mode runs in CI on every push. Building the spreadsheet needs `openpyx
 
 Running the checker on `reference/ai-tells.csv` or on the rules files lights up, because they hold specimens of the exact things it looks for. The filler-weight group fires on legitimate technical writing, where a significant digit really is significant, so treat it as a prompt to look. The same goes for every finding marked REVIEW.
 
-## Copyright
+## License
 
-Copyright 2026 David Soden. All rights reserved.
+CC0 1.0. Public domain, no attribution required. Take it, change it, ship it inside whatever you want.

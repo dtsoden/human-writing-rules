@@ -4,8 +4,17 @@
   "description": "Prose that reads like a careful human wrote it, in your own voice. Removes the habits that give machine writing away, uses story only when a piece needs it, and learns your preferences from how you react to its drafts.",
   "author": {
     "name": "David Soden",
-    "url": "https://humanwritingrules.com"
+    "url": "https://github.com/dtsoden"
   },
-  "homepage": "https://humanwritingrules.com",
-  "keywords": ["writing", "style", "voice", "storytelling", "editing", "ai-writing"]
+  "homepage": "https://github.com/dtsoden/human-writing-rules",
+  "keywords": [
+    "writing",
+    "style",
+    "voice",
+    "storytelling",
+    "editing",
+    "ai-writing"
+  ],
+  "license": "CC0-1.0",
+  "repository": "https://github.com/dtsoden/human-writing-rules"
 }
