@@ -150,3 +150,30 @@ Structure,Same argument restated in five framings,One point reworded across five
 Structure,One metaphor carried through the whole piece,The garden metaphor extended for 800 words,Use it once and move on
 Structure,Commentary interleaved with a requested draft,Here's your email! [draft] Let me know if...,Deliverable alone in its own block or file
 Structure,Draft opening addressed to the requester,"Hi David, here's the revised intro:",Open the draft as the recipient will read it
+Storytelling,Nothing changes between the start and the end,Our team worked hard and delivered great results for the client.,"Say what was true before, what happened, and what is true now"
+Storytelling,Opens on background instead of the turning point,"Founded in 2015, Acme has always believed in doing things differently. Over the years...","Open on the moment things turned, then add backstory only as the reader needs it"
+Storytelling,No obstacle in the story,We rolled out the new process and adoption was smooth across every team.,Name what resisted and what it cost to get past it
+Storytelling,The old way is a strawman,"Before, the old system was slow and frustrating for everyone.","Say what the old way did well, then why it still had to go"
+Storytelling,Every step goes up,"We launched, users loved it, and growth took off.",Keep the setback in. A story with no dip reads as an ad
+Storytelling,The writer is the hero,I built a dashboard that solved the problem and impressed leadership.,Make the reader or the customer the hero and the writer the guide
+Storytelling,Values stated as traits,We're passionate about quality and obsessed with our customers.,Show one decision that cost time or money because of the value
+Storytelling,Abstractions the reader can't picture,The initiative drove alignment and created value across the organization.,"Replace one abstraction with a scene: where, who, what happened"
+Storytelling,Generic detail that could describe anything,The office was busy and full of energy.,One exact detail that is only true of this place
+Storytelling,A number with no case behind it,Churn dropped 12% after the change.,Pair the trend with one customer who shows it
+Storytelling,Emotion words nothing in the story caused,I was thrilled and humbled to lead this effort.,Name the feeling at the turning point and what caused it
+Storytelling,The moral is spelled out after the scene,The lesson here is that persistence pays off.,"Cut it. If the scene made the point, the reader already has it"
+Storytelling,A hook the body never pays off,"""The secret nobody tells you about hiring"" followed by standard advice",Only promise a secret or a puzzle the piece actually solves
+Storytelling,Too many takeaways to remember,Here are 11 lessons from our migration.,Pick three or fewer things the reader should keep
+Storytelling,Vague blame in a failure story,Market conditions shifted and timing worked against us.,"Say what you assumed and when you saw it was wrong, then what you changed"
+Storytelling,Invented anecdote or composite persona,"Meet Sarah, a marketing manager in Ohio who struggled with reporting.","Use a real case, or leave a bracketed slot and ask for one"
+Storytelling,Invented first-person experience,"""When I ran my first startup, I learned..."" written for an author who never ran one",Ask the author for the real experience or leave it out
+Storytelling,Stock story transitions,"Little did I know, that was about to change. Fast forward to 2023...",Cut the transition and go straight to what happened
+Storytelling,Slide text the speaker reads aloud,Fifty words of bullet text read out word for word,Show an image and say what it can't show
+Storytelling,A story forced into writing that only needed facts,"Last spring, as rain tapped on the window, I realized our API rate limit had to change. It's now 500 requests a minute.","Give the fact. Save story for pieces that have to persuade, build trust, or be remembered"
+Phraseology,Generic engagement question at the end,"Thoughts? Agree?",Ask a specific question of people who can answer it or end on the point
+Phraseology,Asking for comments or tags,Drop a comment below and tag someone who needs this.,Cut it. If the piece is useful people respond without being asked
+Phraseology,Performance tag before a position,Unpopular opinion: meetings are too long.,State the position
+Phraseology,Throat-clearing opener,"I wanted to share a quick story about our launch.",Start with the first thing that happened
+Evidence,Anecdote credited to an unnamed person,A client told me last week that nobody reads the docs.,"Use it only if it happened, and say who or what kind of client if you can"
+Evidence,Claim-shaped absolute,Everyone knows code review slows teams down.,Keep an absolute only if it survives the obvious exception
+Tone,Piece built around attacking a named person,A whole post on why one named executive is wrong,Argue against the idea and leave the person out

@@ -4,10 +4,16 @@ Style checker for the human-natural writing rules.
 Scans HTML/MD/text for em dashes and other non-keyboard characters, banned
 words and phrases, filler weight, negation reframes, self-answered questions,
 anaphora, rule-of-three patterns, tailing participles, unnamed sources,
-stacked one-line paragraphs, "My view" opinion labels, and Title Case
-headers.
+stacked one-line paragraphs, "My view" opinion labels, story cliches
+(spelled-out morals, stock transitions, announced emotion), stock persona
+introductions, engagement bait and performance tags, throat-clearing
+openers, unnamed anecdotes, absolute claims (review), and Title Case headers.
 
 Usage: python style-check.py <file> [file...]
+       python style-check.py --ignore "TITLE CASE HEADER,STORY CLICHE" <file>
+
+--ignore drops findings whose type starts with any of the comma-separated
+names, for exceptions a writer or niche has chosen.
 """
 import sys, re, html, io
 
@@ -89,6 +95,47 @@ UNNAMED_SOURCES = [
 OPINION_LABELS = [
     (r"\bmy view\b", 'OPINION LABEL: "my view" (use My advice, IME, IMO, My opinion or My technique, and vary it)'),
 ]
+
+# Story habits from the STORYTELLING section: a moral spelled out after the
+# scene, stock transitions, and emotion announced instead of caused.
+STORY_CLICHES = [
+    "the lesson here is", "the moral of the story", "this story shows",
+    "this story teaches", "and that's the power of", "and that is the power of",
+    "little did i know", "little did we know", "little did they know",
+    "fast forward to", "fast-forward to", "that's when it hit me",
+    "thrilled and humbled", "humbled and honored", "humbled and honoured",
+    "excited to announce", "excited to share", "thrilled to announce",
+    "thrilled to share",
+]
+
+# A named stranger introduced like a stock persona. Often an invented
+# anecdote, so it is a prompt to check the person is real.
+PERSONA_INTRO = r"\b(?:Meet|Imagine|Consider|Take) [A-Z][a-z]+, (?:a|an|our)\b"
+
+# Asking for engagement outright, and tags that announce a stunt.
+ENGAGEMENT_BAIT = [
+    (r"\b(?:agree|thoughts|am i wrong|anyone else|who else)\s*\?", "generic engagement question"),
+    (r"\bwhat do you (?:all |guys )?think\s*\?", "generic engagement question"),
+    (r"\b(?:comment|drop|share|leave)\b[^.?!\n]{0,30}\b(?:below|in the comments)\b", "asks for comments"),
+    (r"\blet me know in the comments\b", "asks for comments"),
+    (r"\btag (?:someone|a friend|a colleague|anyone)\b", "asks readers to tag people"),
+    (r"\bfollow (?:me )?for more\b", "asks for follows"),
+    (r"\b(?:like|repost|share|save) (?:this post|if you)\b", "asks for likes or reposts"),
+    (r"\bunpopular opinion\b", "performance tag"),
+    (r"\bhot take\b", "performance tag"),
+]
+
+# Openers that clear the throat instead of starting with the point. Checked
+# at the start of a line only.
+THROAT_CLEARING = r"^\s*(?:i've been thinking|i have been thinking|i wanted to share|i want to share|quick story|quick thought|let me tell you)\b"
+
+# An anecdote credited to an unnamed person. Often invented, so it is a
+# prompt to confirm it happened.
+ANECDOTE = r"\ba (?:client|customer|founder|ceo|cfo|friend|prospect|recruiter|manager|colleague)(?: of mine)? (?:told|said|asked)\b"
+
+# Claim-shaped absolutes. Review only. Plain uses such as "nobody could
+# reproduce it" are left alone.
+ABSOLUTES = r"\b(?:everyone|everybody|nobody|no one) (?:knows|agrees|wants|needs|cares)\b|\bguaranteed\b|\b100% of\b|\balways works\b"
 
 AI_TRANSITIONS = ["furthermore", "moreover", "additionally", "notably", "significantly", "ultimately"]
 
@@ -184,6 +231,20 @@ def check(path):
         for p in UNNAMED_SOURCES:
             if p in low:
                 findings.append(('UNNAMED SOURCE: ' + p, i, snip))
+        for p in STORY_CLICHES:
+            if p in low:
+                findings.append(('STORY CLICHE: ' + p, i, snip))
+        if re.search(PERSONA_INTRO, line):
+            findings.append(('REVIEW (invented persona?)', i, snip))
+        for pat, label in ENGAGEMENT_BAIT:
+            if re.search(pat, low):
+                findings.append(('ENGAGEMENT BAIT: ' + label, i, snip))
+        if re.search(THROAT_CLEARING, low):
+            findings.append(('THROAT-CLEARING OPENER', i, snip))
+        if re.search(ANECDOTE, low):
+            findings.append(('REVIEW (anecdote, confirm it happened)', i, snip))
+        if re.search(ABSOLUTES, low):
+            findings.append(('REVIEW (absolute claim)', i, snip))
         for pat, label in OPINION_LABELS:
             if re.search(pat, low):
                 findings.append((label, i, snip))
@@ -281,12 +342,18 @@ def check(path):
 
 
 def main():
-    if len(sys.argv) < 2:
+    args = sys.argv[1:]
+    ignore = []
+    if '--ignore' in args:
+        i = args.index('--ignore')
+        ignore = [k.strip().upper() for k in args[i + 1].split(',') if k.strip()]
+        args = args[:i] + args[i + 2:]
+    if not args:
         print(__doc__.strip())
         return 2
     total = 0
-    for path in sys.argv[1:]:
-        f = check(path)
+    for path in args:
+        f = [x for x in check(path) if not any(x[0].upper().startswith(k) for k in ignore)]
         total += len(f)
         print('=' * 72)
         print('FILE:', path)

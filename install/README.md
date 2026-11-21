@@ -1,10 +1,11 @@
 # Where each file goes
 
-Every file in this folder is generated from `writing-rules.md` in the repo root. Do not edit them by hand; edit the source and run `python tools/build.py`.
+Every file in this folder is generated from `writing-rules.md` in the repo root. Do not edit them by hand. Edit the source and run `python tools/build.py`.
 
 | Tool | File to use | Where it goes |
 | --- | --- | --- |
 | Claude Code | `CLAUDE.md` | Project root, or `~/.claude/CLAUDE.md` to apply everywhere |
+| Human Writing Rules skill | `../skills/human-writing-rules/` | Run `python tools/build.py --install` from the repo root, or upload `../dist/human-writing-rules.zip` in claude.ai or ChatGPT |
 | Claude Projects, claude.ai | `writing-rules.txt` | The project instructions box |
 | OpenAI Codex | `AGENTS.md` | Repo root, next to `.git` |
 | ChatGPT custom instructions | `../writing-rules-short.md` | Settings, Personalization, Custom instructions |
@@ -21,6 +22,8 @@ Every file in this folder is generated from `writing-rules.md` in the repo root.
 The Cursor rule ships with `alwaysApply: false` and a description, so Cursor loads it when the work looks like writing. If you want it on for every request, open the `.mdc` file and set `alwaysApply: true`.
 
 ## Notes on specific tools
+
+The files in this folder are the always-on rules on their own. The skill adds storytelling, the writer's personal layer and learning from feedback, so use it wherever the tool supports skills. Without it, the STORYTELLING section of the rules still decides how much story a piece needs.
 
 ChatGPT's custom instructions box caps at 1,500 characters on free and Go plans and 5,000 on paid plans, which is why the short version exists. Everywhere else takes the full text.
 

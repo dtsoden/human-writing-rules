@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "human-writing-rules",
+  "owner": {
+    "name": "David Soden",
+    "url": "https://humanwritingrules.com"
+  },
+  "metadata": {
+    "description": "Human Writing Rules: prose that reads like a careful human wrote it, in your own voice."
+  },
+  "plugins": [
+    {
+      "name": "human-writing-rules",
+      "source": "./",
+      "description": "Prose that reads like a careful human wrote it, in your own voice, with story only where a piece needs it and a profile that learns from your feedback.",
+      "author": {
+        "name": "David Soden",
+        "url": "https://humanwritingrules.com"
+      },
+      "category": "productivity",
+      "homepage": "https://humanwritingrules.com",
+      "keywords": ["writing", "style", "voice", "storytelling", "editing"]
+    }
+  ]
+}

@@ -1,60 +1,75 @@
 ![Human Writing Rules](Logo.png)
 
-# Human writing rules
+# Human Writing Rules
 
-A prompt that stops language models from writing like language models, a catalog of the habits it targets, and a script that checks a finished draft for the ones a machine can catch.
+Writing rules that stop language models from writing like language models, a skill that applies them in the writer's own voice and learns from their feedback, a catalog of the habits it targets, and a script that checks a finished draft for the ones a machine can catch.
 
-These three pieces work together. Put the prompt in before anything is written, run the checker over the draft afterward, and open the catalog when you disagree with a finding and want the reasoning behind it.
+The product lives at humanwritingrules.com. This repo is private and is where it gets built.
 
-## Quick start
+## How it fits together
 
-Paste `writing-rules.md` into wherever your tool keeps standing instructions. The `install/` folder has the same text already shaped for specific tools, and `install/README.md` says which file goes where.
+There are three layers, and the most specific one wins.
 
-Then check what comes back:
+- Core: the always-on rules (`writing-rules.md`) and the storytelling course (`storytelling.md`). Everyone gets the same core. Updates replace it.
+- Personal: one per writer, kept in `~/.human-writing-rules`. It holds the writer's voice samples, a short profile, the lessons the skill has learned from their reactions, and any rules they changed. Updates never touch it.
+- Niche: rules for one channel or subject, such as LinkedIn, a newsletter or a website. A niche lives in the project it belongs to (`.human-writing-rules/niche.md`) or in the personal folder's `niches/`, and can point to existing files or skills instead of copying them.
+
+Every style rule is on by default and can be changed by the writer in plain words ("I use em dashes"). The rules on evidence and invented stories can't be changed by any layer. `skill/SKILL.md` describes how the skill loads the layers, runs the optional first-time setup, and asks about one specific choice after a substantial piece so it can learn.
+
+## Install
+
+Claude Code and Codex, on a computer with Python 3:
 
 ```
-python tools/style-check.py draft.md
+python tools/build.py --install           Claude Code
+python tools/build.py --install codex     Claude Code and Codex
 ```
 
-Python 3, standard library only, nothing to install.
+This copies the skill into the tool's skills folder and writes the always-on rules into its global instructions file between marker lines. Nothing outside the markers changes, a dated copy of the instructions file is kept first, and the personal layer is never touched. Run it again after any rebuild.
+
+Claude plugin: the repo root is a Claude plugin and marketplace (`.claude-plugin/`), with the skill in `skills/human-writing-rules/`.
+
+claude.ai and ChatGPT: upload `dist/human-writing-rules.zip` as a skill. Where a tool can't save files, the skill offers an updated profile at the end of a session for the writer to attach next time.
+
+Everything else: `install/README.md` lists paste-in files for tools without skills.
 
 ## What it changes
 
-`examples/before.md` and `examples/after.md` tell the same story about a build pipeline migration. One was written the way models write by default, and the checker finds 32 problems in it: unnamed sources, two negation reframes, a self-answered question, a tailing participle, a Title Case header, a Conclusion section that repeats what came before, and eleven banned words. Its rewrite reports clean and gives an actual failure rate where the original claimed productivity gains with no number behind them.
+`examples/before.md` and `examples/after.md` tell the same story about a build pipeline migration. One was written the way models write by default, and the checker finds 33 problems in it, including unnamed sources, two negation reframes, a self-answered question, a Title Case header, and a Conclusion section that repeats what came before. Its rewrite reports clean and gives an actual failure rate where the original claimed productivity gains with no number behind them.
+
+`skill/what-this-changes.md` is the one-page version for buyers, shown during setup.
 
 ## What's in here
 
-`writing-rules.md` is the prompt. Roughly 9.5 KB, organized into output separation, punctuation, banned words, banned phrases, sentence patterns, structure, tone, evidence, vocabulary, and formatting. Everything above the `---` line is commentary and everything below it is the prompt itself, which is also how the build script knows where to cut.
+`writing-rules.md` is the always-on rule set, organized into how the rules adjust, output separation, punctuation, banned words, banned phrases, sentence patterns, structure, storytelling, tone, evidence, people, vocabulary and formatting. Everything above its `---` line is commentary and everything below it is the prompt, which is also how the build script knows where to cut.
 
-`writing-rules-short.md` is a 1,497 character version for boxes that cap out. ChatGPT's custom instructions allow 1,500 characters on free and Go plans and 5,000 on paid plans, so the short version fits everywhere.
+`storytelling.md` is the storytelling course written for a model: when a story helps, what it's for, who it's for, where the real material comes from, conflict, characters, a menu of story shapes, telling, and recipes for common jobs. It draws on ideas from Steve Rawling's Storyteller Tactics deck from Pip Decks without reproducing its text.
 
-`reference/ai-tells.csv` is the catalog: 151 rows across eight categories, with the tell, an example of it, and what a person would write instead. It exists so the rules aren't arbitrary. When the prompt bans a word, this file shows a sentence carrying it and what to write instead. `reference/ai-tells.xlsx` is the same rows with a frozen header and a filter, for people who edit with a spreadsheet open beside the draft.
+`skill/` holds the skill's own instructions and the buyer-facing summary. The build combines them with the rules, the course, the catalog and the checker into `skills/human-writing-rules/`.
 
-`tools/style-check.py` reports line numbers for em dashes and other characters you cannot type, the banned word and phrase lists, filler weight, depth adverbs, "is" substitutes, six negation reframe patterns, self-answered questions, three-in-a-row anaphora, rule-of-three rhythm, tailing participles, unnamed sources, stacked one-line paragraphs, the banned opinion label, Title Case headers, and sections named Conclusion. It exits 1 on findings and 0 when clean, so it works as a pre-commit hook or a build step. It reads Markdown and HTML as well as plain text.
+`writing-rules-short.md` is a 1,497 character version for boxes that cap out, such as the 1,500 character limit on some ChatGPT plans.
 
-What it cannot judge is whether you took a position, whether the enthusiasm matches the subject, or whether an example is real. Those stay yours.
+`reference/ai-tells.csv` is the catalog: 178 rows across nine categories, with the tell, an example of it, and what a person would write instead. `reference/ai-tells.xlsx` is the same rows as a spreadsheet.
+
+`tools/style-check.py` reports line numbers for characters you cannot type, the banned word and phrase lists, filler weight, depth adverbs, "is" substitutes, negation reframes, self-answered questions, anaphora, rule-of-three rhythm, tailing participles, unnamed sources, stacked one-line paragraphs, the banned opinion label, story cliches, stock persona introductions, engagement bait and performance tags, throat-clearing openers, Title Case headers, and sections named Conclusion. Unnamed anecdotes and claim-shaped absolutes are flagged for review. It exits 1 on findings and 0 when clean.
+
+What it cannot judge is whether you took a position, whether the enthusiasm matches the subject, whether anything in your story changed, or whether an example is real. Those stay yours.
 
 ## Editing and rebuilding
 
-Two files are sources of truth: `writing-rules.md` and `reference/ai-tells.csv`. Everything in `install/`, plus the spreadsheet, is generated from them.
+The sources are `writing-rules.md`, `storytelling.md`, `skill/`, `reference/ai-tells.csv` and `tools/style-check.py`. Everything in `install/` and `skills/`, plus the spreadsheet and the zip, is generated from them.
 
 ```
 python tools/build.py           rewrite the generated files
 python tools/build.py --check   exit 1 if anything is out of date
 ```
 
-The check mode runs in CI on every push, so an edit to the prompt that doesn't get rebuilt fails the build instead of drifting out of sync. Building the spreadsheet needs `openpyxl`; nothing else in the repo has dependencies.
+The check mode runs in CI on every push. Building the spreadsheet needs `openpyxl`, and nothing else has dependencies.
 
 ## Behavior that looks like a bug
 
-Running the checker on `reference/ai-tells.csv` lights up, because the example column holds specimens of the exact things it looks for. That is the catalog doing its job.
+Running the checker on `reference/ai-tells.csv` or on the rules files lights up, because they hold specimens of the exact things it looks for. The filler-weight group fires on legitimate technical writing, where a significant digit really is significant, so treat it as a prompt to look. The same goes for every finding marked REVIEW.
 
-The filler-weight group (crucial, essential, significant, and the rest) fires on legitimate technical writing, where a significant digit really is significant. Treat that group as a prompt to look rather than a failure. The same goes for the context group, which flags words that are only banned as metaphors.
+## Copyright
 
-The two rules files light up hardest of all, because a list of banned words is made of banned words. So does this README, which reports four findings: three from the sentence above naming the filler words, and one for "public domain" in the license line. The prose written to be read rather than to be a list, meaning `examples/after.md` and `install/README.md`, reports clean.
-
-Dropping `CLAUDE.md` or `AGENTS.md` into a code project applies these rules to everything the agent does. The generated copies open with a scope note limiting them to prose, and `install/README.md` explains how to add the rules to a file you already have instead of replacing it.
-
-## License
-
-CC0 1.0. Public domain, no attribution required. Take it, change it, ship it inside whatever you want.
+Copyright 2026 David Soden. All rights reserved.
